@@ -2,7 +2,8 @@ export interface FrontMatter {
   title: string;
   author: string;
   date: string;
-  club: string;
+  category: string;
+  tags: string;
   heading: string;
   thumbnail?: string;
 }
