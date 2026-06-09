@@ -709,3 +709,22 @@ body {
 		font-size: 1.25rem;
 	}
 }
+
+.post-list-content {
+	display: grid;
+	grid-template-columns: 2fr 1fr; /*左:右 = 4:3*/
+}
+
+@media (max-width: 768px) {
+	.post-list-content {
+		grid-template-columns: 1fr; /*縦並び*/
+	}
+}
+
+.article-card {
+	transition: 0.2s;
+}
+
+.article-card:hover {
+	background-color: var(--color-gray-300);
+}
