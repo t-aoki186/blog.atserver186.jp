@@ -32,12 +32,19 @@
 			<div class="post-list-grid-item mr-8">
 				{#each posts as post}
 					<a href={`/article/${post.category}/${post.slug}`}>
-						<article class="article-card mb-4 border-b-2 border-b-(--main-text-color) p-4 rounded-t-xs">
-							<h2 class="mb-2 text-2xl">{post.title}</h2>
-							<div class="flex">
-								<p>{post.heading}</p>
-								<div class="ml-auto w-fit rounded-2xl border border-gray-500 px-2 py-1 text-right">
-									<p class="text-xs">{post.author}</p>
+						<article
+							class="article-card mb-4 flex gap-5 rounded-t-xs border-b-2 border-b-(--main-text-color) p-4"
+						>
+							<img src={post.thumbnail} alt="{post.title}のサムネイル" class="w-30 rounded-lg" />
+							<div class="flex-1">
+								<h2 class="mb-2 text-2xl">{post.title}</h2>
+								<div class="flex">
+									<p>{post.heading}</p>
+									<div
+										class="ml-auto w-fit rounded-2xl border border-gray-500 px-2 py-1 text-right"
+									>
+										<p class="text-xs">{post.author}</p>
+									</div>
 								</div>
 							</div>
 						</article>
@@ -69,10 +76,10 @@
 	}
 
 	.article-card {
-        transition: 0.2s;
+		transition: 0.2s;
 	}
 
 	.article-card:hover {
-        background-color: var(--color-gray-300);
+		background-color: var(--color-gray-300);
 	}
 </style>

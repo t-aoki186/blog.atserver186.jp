@@ -28,7 +28,7 @@
 			<p class="text-xs">{post.author}</p>
 		</div>
 		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
-			<p class="text-xs">{post.category}</p>
+			<a href="/category/{post.category}" class="text-xs">{post.category}</a>
 		</div>
 		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
 			<p class="text-xs">{post.tags}</p>
