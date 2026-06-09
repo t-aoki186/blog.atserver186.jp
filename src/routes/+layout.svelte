@@ -67,7 +67,7 @@
 		otherOpen = false;
 	}
 	/*e:ヘッダーその他メニュー*/
-//100pxスクロールでヘッダーの表示を変更
+	//100pxスクロールでヘッダーの表示を変更
 	let scrolled = $state(false);
 	//ヘッダー
 	const headerClass = $derived(
@@ -152,10 +152,7 @@
 	<!--s:SEO-->
 	<!--各ページでheadに内容がなければ以下の内容が表示される-->
 	<title>ATSERVER Blog</title>
-	<meta
-		name="description"
-		content="ATSERVERのブログです。"
-	/>
+	<meta name="description" content="ATSERVERのブログです。" />
 	<meta name="keywords" content="ブログ,ATSERVER,技術" />
 	<meta property="og:site_name" content="ATSERVER Blog" />
 	<meta property="og:type" content="website" />
@@ -209,7 +206,6 @@
 		</div>
 	{/if}
 </Modal>
-
 
 {#if $isVisible}
 	<Loading />
@@ -285,17 +281,20 @@
 					>
 				</li>
 				<li>
-					<a href="/service" class="header-text ml-3 text-xs tracking-wider transition">サービス</a>
+					<a href="/" class="header-text ml-3 text-xs tracking-wider transition">ホーム</a>
 				</li>
 				<li>
-					<a href="/software" class="header-text ml-3 text-xs tracking-wider transition"
-						>ソフトウェア</a
+					<a href="/category/server" class="header-text ml-3 text-xs tracking-wider transition">サーバー</a>
+				</li>
+				<li>
+					<a href="/category/electric_work" class="header-text ml-3 text-xs tracking-wider transition">電子工作</a
 					>
 				</li>
 				<li>
-					<a href="/contact" class="header-text ml-3 text-xs tracking-wider transition"
-						>お問い合わせ</a
-					>
+					<a href="/category/fix" class="header-text ml-3 text-xs tracking-wider transition">修理</a>
+				</li>
+				<li>
+					<a href="/category/unknown" class="header-text ml-3 text-xs tracking-wider transition">未分類</a>
 				</li>
 				<li class="mr-6">
 					<button
@@ -313,9 +312,10 @@
 		<nav class="px-6 pt-6 pb-6 md:hidden">
 			<ul class="flex flex-col gap-4 text-sm tracking-wide">
 				<li><a href="/" class="header-text">ホーム</a></li>
-				<li><a href="/service" class="header-text">サービス</a></li>
-				<li><a href="/software" class="header-text">ソフトウェア</a></li>
-				<li><a href="/contact" class="header-text">お問い合わせ</a></li>
+				<li><a href="/category/server" class="header-text">サーバー</a></li>
+				<li><a href="/category/electric_work" class="header-text">電子工作</a></li>
+				<li><a href="/category/fix" class="header-text">修理</a></li>
+				<li><a href="/category/unknown" class="header-text">未分類</a></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
 				</li>
