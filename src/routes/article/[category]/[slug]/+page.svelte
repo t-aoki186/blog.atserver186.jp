@@ -25,9 +25,14 @@
 
 	<article class="container mx-auto mt-15 mb-25">
 		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
-			<p class="text-xs">{post.author} | {post.club}</p>
+			<p class="text-xs">{post.author}</p>
 		</div>
-
+		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
+			<p class="text-xs">{post.category}</p>
+		</div>
+		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
+			<p class="text-xs">{post.tags}</p>
+		</div>
 		<div class="meta mb-8 border-b pb-4 text-gray-600">
 			<p>投稿日: {post.date}</p>
 		</div>

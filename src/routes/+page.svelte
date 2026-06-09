@@ -31,13 +31,13 @@
 		<div class="post-list-content">
 			<div class="post-list-grid-item mr-8">
 				{#each posts as post}
-					<a href={`/article/${post.slug}`}>
+					<a href={`/article/${post.category}/${post.slug}`}>
 						<article class="article-card mb-4 border-b-2 border-b-(--main-text-color) p-4 rounded-t-xs">
 							<h2 class="mb-2 text-2xl">{post.title}</h2>
 							<div class="flex">
 								<p>{post.heading}</p>
 								<div class="ml-auto w-fit rounded-2xl border border-gray-500 px-2 py-1 text-right">
-									<p class="text-xs">{post.author} | {post.club}</p>
+									<p class="text-xs">{post.author}</p>
 								</div>
 							</div>
 						</article>
