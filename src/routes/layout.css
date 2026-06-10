@@ -60,9 +60,16 @@ body {
 }
 
 .container {
-	width: 90%;
+	width: 70%;
 	@apply mx-auto;
 }
+
+@media (max-width: 1280px) {
+	.container {
+		width: 90%;
+	}
+}
+
 /*== nprogress関係 ==*/
 #nprogress .bar {
 	background: var(--main-text-color) !important;
@@ -712,7 +719,7 @@ body {
 
 .post-list-content {
 	display: grid;
-	grid-template-columns: 2fr 1fr; /*左:右 = 4:3*/
+	grid-template-columns: 3fr 1fr; /*左:右 = 4:3*/
 }
 
 @media (max-width: 768px) {
@@ -727,4 +734,14 @@ body {
 
 .article-card:hover {
 	background-color: var(--color-gray-300);
+}
+
+@media (max-width: 1024px) {
+	.aside-content {
+		display: none;
+	}
+
+	.post-list-content {
+		display: block;
+	}
 }

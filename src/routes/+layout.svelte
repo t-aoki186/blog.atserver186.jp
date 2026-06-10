@@ -216,6 +216,7 @@
 		<!--s:ロゴ-->
 		<a href="/" class="flex shrink-0 whitespace-nowrap transition">
 			<img src={logo} alt="" class="h-10 w-auto rounded-xl" />
+			<p class="header-text m-auto ml-2 font-bold">ATSERVER Blog</p>
 		</a>
 		<!--e:ロゴ-->
 		<!---->
