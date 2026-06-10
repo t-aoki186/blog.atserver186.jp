@@ -285,17 +285,24 @@
 					<a href="/" class="header-text ml-3 text-xs tracking-wider transition">ホーム</a>
 				</li>
 				<li>
-					<a href="/category/server" class="header-text ml-3 text-xs tracking-wider transition">サーバー</a>
-				</li>
-				<li>
-					<a href="/category/electric_work" class="header-text ml-3 text-xs tracking-wider transition">電子工作</a
+					<a href="/category/server" class="header-text ml-3 text-xs tracking-wider transition"
+						>サーバー</a
 					>
 				</li>
 				<li>
-					<a href="/category/fix" class="header-text ml-3 text-xs tracking-wider transition">修理</a>
+					<a
+						href="/category/electric_work"
+						class="header-text ml-3 text-xs tracking-wider transition">電子工作</a
+					>
 				</li>
 				<li>
-					<a href="/category/unknown" class="header-text ml-3 text-xs tracking-wider transition">未分類</a>
+					<a href="/category/fix" class="header-text ml-3 text-xs tracking-wider transition">修理</a
+					>
+				</li>
+				<li>
+					<a href="/category/unknown" class="header-text ml-3 text-xs tracking-wider transition"
+						>未分類</a
+					>
 				</li>
 				<li class="mr-6">
 					<button
@@ -379,7 +386,32 @@
 	{/if}
 </header>
 
-{@render children()}
+<main class="mt-15 mr-1 ml-1 min-h-screen">
+	<section class="container mx-auto mt-20 mb-25">
+		<div class="post-list-content">
+			<div class="mr-8 p-4 bg-amber-300">
+				{@render children()}
+			</div>
+			<aside class="aside-content" style="border-left: 1px solid #000;">
+				<div class="ml-8 w-full">
+					<form action="#" class="flex w-full items-center overflow-hidden py-4">
+						<label class="flex-1">
+							<input
+								type="text"
+								class="sf-input h-11.25 w-full border-none"
+								placeholder="キーワードを入力"
+							/>
+						</label>
+						<button type="submit" class="sf-submit h-11.25 w-12.5 cursor-pointer" aria-label="検索"
+						></button>
+					</form>
+					<hr class="main-hr" style="margin-bottom: 1rem !important;" />
+					<p class="border-l-3 border-gray-500 pl-2 text-xl">最近の投稿</p>
+				</div>
+			</aside>
+		</div>
+	</section>
+</main>
 
 <!--フッター-->
 <footer class="footer m-0 mb-0 w-full pt-[10] pr-0 pb-[10] pl-0">
