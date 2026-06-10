@@ -11,7 +11,16 @@
 	// data.posts を使う（+page.server.ts から渡される）
 	const posts = $derived(data.posts);
 
-	let pageTitle = '記事一覧';
+    const category = $derived(data.category);
+
+    const getPageTitle = (category: string): string => {
+        return `カテゴリ:${category}`;
+    };
+
+    let titleExport = getPageTitle(category);
+
+
+	let pageTitle = titleExport;
 </script>
 
 <svelte:head>
@@ -19,6 +28,9 @@
 	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
 </svelte:head>
 
-<p class="">{pageTitle}</p>
+<p class="text-xl mb-4">
+	<i class="fa-solid fa-folder-open"></i>
+	{category}
+</p>
 
 <PostCard {posts} />
