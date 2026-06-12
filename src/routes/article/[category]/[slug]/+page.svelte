@@ -13,40 +13,30 @@
 	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
 </svelte:head>
 
-<main class="mt-15 mr-1 ml-1 min-h-screen">
-	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
-		<p
-			class="tf26-page-title"
-			style="color: black; margin-bottom: 0; view-transition-name: tfvisitortitle-hero;"
-		>
-			{pageTitle}
-		</p>
+<article class="mx-auto mt-15 mb-25">
+	<div class="mb-4">
+		<h1 class="text-3xl font-bold">{post.title}</h1>
 	</div>
+	<div class="mb-4 flex gap-2">
+		<p class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs">
+			<i class="fa-regular fa-circle-user mr-1"></i>{post.author}
+		</p>
+		<a
+			href="/category/{post.category}"
+			class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs">{post.category}</a
+		>
+		<p class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs">{post.tags}</p>
+	</div>
+	<img src={post.thumbnail} alt="{post.title}のサムネイル" class="mx-auto rounded-xl" />
+	<p class=""><i class="fa-solid fa-clock-rotate-left"></i>{post.date}</p>
+	<div class="markdown-content">
+		{@html post.html}
+	</div>
+</article>
 
-	<article class="container mx-auto mt-15 mb-25">
-		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
-			<p class="text-xs">{post.author}</p>
-		</div>
-		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
-			<a href="/category/{post.category}" class="text-xs">{post.category}</a>
-		</div>
-		<div class="mr-auto w-fit rounded-2xl border border-gray-500 px-2 py-1">
-			<p class="text-xs">{post.tags}</p>
-		</div>
-		<div class="meta mb-8 border-b pb-4 text-gray-600">
-			<p>投稿日: {post.date}</p>
-		</div>
-
-		<!-- markedで変換済みのHTMLを表示 -->
-		<div class="markdown-content">
-			{@html post.html}
-		</div>
-	</article>
-</main>
-
-<ol class="main-breadcrumb container mx-auto">
+<ol class="main-breadcrumb mx-auto">
 	<li><a href="/">ホーム</a></li>
-	<li><a href="/article">記事一覧</a></li>
+	<li><a href="/category/{post.category}">{post.category}</a></li>
 	<li>{pageTitle}</li>
 </ol>
 
