@@ -45,7 +45,7 @@
 
 	/*s:共通変数*/
 	let logo = '/img/logo.webp';
-	let logo_alt = 'ATSERVERロゴ';
+	let logo_alt = 'atserverロゴ';
 	/*e:共通変数*/
 
 	/*s:ハンバーガーメニュー*/
@@ -394,7 +394,11 @@
 			</div>
 			<aside class="aside-content" style="border-left: 1px solid #000;">
 				<div class="ml-8 w-full">
-					<form action="#" class="flex w-full items-center overflow-hidden py-4">
+					<form
+						action="/search/"
+						class="flex w-full items-center overflow-hidden py-4"
+						method="GET"
+					>
 						<label class="flex-1">
 							<input
 								type="text"
@@ -407,6 +411,11 @@
 					</form>
 					<hr class="main-hr" style="margin-bottom: 1rem !important;" />
 					<p class="border-l-3 border-gray-500 pl-2 text-xl">最近の投稿</p>
+					<div class="mb-4">テスト</div>
+					<p class="border-l-3 border-gray-500 pl-2 text-xl">カテゴリ</p>
+					<div class="mb-4">テスト</div>
+					<p class="border-l-3 border-gray-500 pl-2 text-xl">タグ</p>
+					<div class="mb-4">テスト</div>
 				</div>
 			</aside>
 		</div>
