@@ -23,7 +23,9 @@
 		</p>
 		<a
 			href="/category/{post.category}"
-			class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs">{post.category}</a
+			class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs"
+			><i class="fa-solid fa-folder-open mr-1"></i>
+			{post.category}</a
 		>
 		<p class="w-fit rounded-2xl border border-gray-500 px-2 py-1 text-xs">{post.tags}</p>
 	</div>
