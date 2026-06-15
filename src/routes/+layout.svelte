@@ -356,7 +356,7 @@
 					>
 				</li>
 				<li>
-					<a href="https://github.com/t-aoki186/atserver186.jp" class="header-text" target="_blank"
+					<a href="https://github.com/t-aoki186/blog.atserver186.jp" class="header-text" target="_blank"
 						><i class="fa-brands fa-github mr-1 text-xs"></i>ソースコード</a
 					>
 				</li>
@@ -371,7 +371,7 @@
 					>
 				</li>
 				<li>
-					<a href="/contact" class="header-text"
+					<a href="https://atserver186.jp/contact" class="header-text" target="_blank"
 						><i class="fa-solid fa-envelope mr-1 text-xs"></i>お問い合わせ</a
 					>
 				</li>
@@ -439,53 +439,47 @@
 
 				<!-- フッターの右側コンテンツ -->
 				<div class="footer-flex-content">
-					<h4>ご案内</h4>
+					<h4>test</h4>
 					<ul>
-						<li><a href="/about">桐朋祭について</a></li>
-						<li><a href="/visitor">来場者の皆様へ</a></li>
-						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">企画タイムテーブル</a></li>
-						<li><a href="/news">お知らせ</a></li>
-						<li><a href="/site/info">サイト情報</a></li>
-						<li><a href="/site/sitemap">サイトマップ</a></li>
-						<li><a href="/site/contact">お問い合わせ</a></li>
+						<li><a href="/">test</a></li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
-					<h4>参加団体</h4>
+					<h4>test</h4>
 					<ul>
-						<li class="flex flex-col gap-2.5">
-							<a href="/organizations" class="font-bold">
-								<i class="fa-solid fa-list"></i><span>一覧はこちら</span>
-							</a>
-						</li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
 					<h4>各種SNS / リンク</h4>
 					<ul>
 						<li>
-							<a href="https://x.com/tohofes_2026" target="_blank">
+							<a href="https://x.com/t_aoki186" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
-								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
-								<span>Instagram</span>
+							<a href="https://msk.atserver186.jp/t_aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>あっとみすき(Misskey)</span>
 							</a>
 						</li>
 						<li>
-							<a href="http://toho.ed.jp" target="_blank">
-								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>桐朋中学校・高等学校HP</span>
+							<a href="https://github.com/t-aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>Github</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://fes.tcc-archive.club/2026/" target="_blank">
+							<a href="https://gitlab.atserver186.jp/t-aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>Gitlab</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>コンピューター部桐朋祭用特設HP</span>
+								<span>ATSERVERホーム</span>
 							</a>
 						</li>
 						<li>
@@ -513,53 +507,47 @@
 			<!--s:アコーディオン-->
 			<div class="mt-8">
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">ご案内</summary>
+					<summary class="font-bold">test</summary>
 					<ul class="pt-2 pl-2">
-						<li><a href="/about">桐朋祭について</a></li>
-						<li><a href="/visitor">来場者の皆様へ</a></li>
-						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">企画タイムテーブル</a></li>
-						<li><a href="/news">お知らせ</a></li>
-						<li><a href="/site/info">サイト情報</a></li>
-						<li><a href="/site/sitemap">サイトマップ</a></li>
-						<li><a href="/site/contact">お問い合わせ</a></li>
+						<li><a href="/">test</a></li>
 					</ul>
 				</details>
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">参加団体</summary>
+					<summary class="font-bold">test</summary>
 					<ul class="pt-2 pl-2">
-						<li class="flex flex-col gap-2.5">
-							<a href="/organizations" class="font-bold">
-								<i class="fa-solid fa-list"></i><span>一覧はこちら</span>
-							</a>
-						</li>
 					</ul>
 				</details>
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
 						<li>
-							<a href="https://x.com/tohofes_2026" target="_blank">
+							<a href="https://x.com/t_aoki186" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
-								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
-								<span>Instagram</span>
+							<a href="https://msk.atserver186.jp/t_aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>あっとみすき(Misskey)</span>
 							</a>
 						</li>
 						<li>
-							<a href="http://toho.ed.jp" target="_blank">
-								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>桐朋中学校・高等学校HP</span>
+							<a href="https://github.com/t-aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>Github</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://fes.tcc-archive.club/2026/" target="_blank">
+							<a href="https://gitlab.atserver186.jp/t-aoki186" target="_blank">
+								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<span>Gitlab</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>コンピューター部桐朋祭用特設HP</span>
+								<span>ATSERVERホーム</span>
 							</a>
 						</li>
 						<li>
@@ -587,9 +575,9 @@
 				class="footer-link"
 				style="margin-right: 10px; margin-left: 10px;">プライバシーポリシー</a
 			><span class="footer-span">|</span>
-			<a href="/site/contact" class="footer-link" style="margin-left: 10px;">お問い合わせ</a>
+			<a href="https://atserver186.jp/contact" class="footer-link" style="margin-left: 10px;" target="_blank">お問い合わせ</a>
 			<p class="footer-text">
-				&copy; 2026 TohoFes. | tohofes.jp All Rights Reserved.
+				&copy; 2026 ATSERVER Blog. | blog.atserver186.jp All Rights Reserved.
 				本サイトの無断転載は、固くこれを禁じます。
 			</p>
 		</div>
