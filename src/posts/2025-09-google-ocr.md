@@ -1,7 +1,7 @@
 ---
 title: Google Tesseract OCRをUbuntu Serverにインストールして使う
 author: 青木
-date: 2025-07-08
+date: 2025-09-25
 category: server
 tags: サーバー,Linux,Google,Tesseract,OCR
 heading: 

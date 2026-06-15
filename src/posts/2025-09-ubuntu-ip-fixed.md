@@ -1,7 +1,7 @@
 ---
 title: 【Ubuntu Server】IPアドレスを固定する方法
 author: 青木
-date: 2025-07-08
+date: 2025-09-14
 category: server
 tags: server,ubuntu,linux,ネット,config
 heading: 
