@@ -11,16 +11,11 @@
 	// data.posts を使う（+page.server.ts から渡される）
 	const posts = $derived(data.posts);
 
-    const category = $derived(data.category);
-
-    const getPageTitle = (category: string): string => {
-        return `カテゴリ:${category}`;
-    };
-
-    let titleExport = getPageTitle(category);
-
-
-	let pageTitle = titleExport;
+	const category = $derived(data.category);
+	const getPageTitle = (category: string): string => {
+		return `カテゴリ:${category}`;
+	};
+	let pageTitle = $derived(getPageTitle(category));
 </script>
 
 <svelte:head>
