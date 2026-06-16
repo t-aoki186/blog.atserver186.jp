@@ -20,9 +20,24 @@ export async function getAllPosts(): Promise<Post[]> {
   
   const posts = Object.entries(postsModules)
     .map(([path, rawContent]) => {
-      const { attributes, body } = fm<FrontMatter>(rawContent as string);
+      let attributes: FrontMatter | undefined | null = null;
+      let body = '';
+
+      // import.meta.glob with `as: 'raw'` yields a string in dev,
+      // but in the build it can be a compiled module object with `metadata`.
+      if (typeof rawContent === 'string') {
+        const parsed = fm<FrontMatter>(rawContent as string);
+        attributes = parsed.attributes;
+        body = parsed.body;
+      } else if (rawContent && typeof rawContent === 'object') {
+        // compiled mdsvex module: metadata contains frontmatter
+        attributes = (rawContent as any).metadata ?? (rawContent as any).attributes ?? null;
+        // body/content isn't available as raw text in the compiled module; leave empty
+        body = '';
+      }
+
       const slug = path.split('/').pop()?.replace('.md', '') || '';
-      
+
       // attributesがundefinedでないことを確認
       if (!attributes) {
         console.error(`Frontmatter not found in ${path}`);
