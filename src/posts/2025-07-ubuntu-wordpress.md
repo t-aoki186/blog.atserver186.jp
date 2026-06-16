@@ -48,7 +48,7 @@ systemctl status apache2.service
 
 と入力し、以下のように表示されていればきちんとインストールされています。
 
-<img src="https://atserver186.jp/Service/Blog/img/686b7ea071803.png" alt=""Active : active(running)>
+<img src="https://atserver186.jp/Service/Blog/img/686b7ea071803.png" alt="Active : active(running)">
 
 - PHP , MySql
 
