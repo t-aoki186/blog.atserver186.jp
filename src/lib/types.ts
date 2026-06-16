@@ -3,12 +3,13 @@ export interface FrontMatter {
   author: string;
   date: string;
   category: string;
-  tags: string;
+  tags: string | string[];
   heading: string;
   thumbnail?: string;
 }
 
-export interface Post extends FrontMatter {
+export interface Post extends Omit<FrontMatter, 'tags'> {
+  tags: string[];
   slug: string;
   content: string;
 }

@@ -29,13 +29,21 @@ export async function getAllPosts(): Promise<Post[]> {
         return null;
       }
       
+      // カンマ区切りのタグを自動で分割する
+      const rawTags = attributes.tags as string | string[];
+      const tags: string[] = typeof rawTags === 'string'
+        ? rawTags.split(',').map((tag: string) => tag.trim()).filter(Boolean)
+        : Array.isArray(rawTags)
+          ? rawTags.map((tag) => String(tag).trim()).filter(Boolean)
+          : [];
+
       return {
         slug,
         title: attributes.title,
         author: attributes.author,
         date: attributes.date,
         category: attributes.category,
-        tags: attributes.tags,
+        tags,
         thumbnail: attributes.thumbnail,
         heading: attributes.heading,
         content: body,
