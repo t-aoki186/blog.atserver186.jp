@@ -356,8 +356,10 @@
 					>
 				</li>
 				<li>
-					<a href="https://github.com/t-aoki186/blog.atserver186.jp" class="header-text" target="_blank"
-						><i class="fa-brands fa-github mr-1 text-xs"></i>ソースコード</a
+					<a
+						href="https://github.com/t-aoki186/blog.atserver186.jp"
+						class="header-text"
+						target="_blank"><i class="fa-brands fa-github mr-1 text-xs"></i>ソースコード</a
 					>
 				</li>
 				<li>
@@ -413,9 +415,43 @@
 					<p class="border-l-3 border-gray-500 pl-2 text-xl">最近の投稿</p>
 					<div class="mb-4">テスト</div>
 					<p class="border-l-3 border-gray-500 pl-2 text-xl">カテゴリ</p>
-					<div class="mb-4">テスト</div>
+					<div class="my-4 flex flex-col gap-2">
+						{#each data.categories as { name, count } (name)}
+							<a
+								href="/category/{name}"
+								class="block rounded-lg border p-2 transition hover:bg-gray-100 dark:hover:bg-gray-300"
+							>
+								<div class="flex items-center justify-between">
+									<div class="flex items-center gap-3">
+										<i class="fa-solid fa-folder-open text-lg"></i>
+										<span class="font-semibold">{name}</span>
+									</div>
+									<span
+										class="rounded-full bg-gray-200 px-3 py-1 text-sm text-white dark:bg-gray-700"
+									>
+										{count}
+									</span>
+								</div>
+							</a>
+						{/each}
+					</div>
 					<p class="border-l-3 border-gray-500 pl-2 text-xl">タグ</p>
-					<div class="mb-4">テスト</div>
+					<div class="my-4 flex flex-wrap gap-3">
+						{#each data.tags as { name, count } (name)}
+							<a
+								href="/tag/{name}"
+								class="inline-flex items-center gap-1 text-xs rounded-full border p-1 transition hover:bg-gray-100 dark:hover:bg-gray-300"
+							>
+								<i class="fa-solid fa-tag"></i>
+								<span class="font-semibold">{name}</span>
+								<span
+									class="rounded-full bg-gray-200 px-1.5 py-0.5 text-xs text-white dark:bg-gray-700"
+								>
+									{count}
+								</span>
+							</a>
+						{/each}
+					</div>
 				</div>
 			</aside>
 		</div>
@@ -446,8 +482,7 @@
 				</div>
 				<div class="footer-flex-content">
 					<h4>test</h4>
-					<ul>
-					</ul>
+					<ul></ul>
 				</div>
 				<div class="footer-flex-content">
 					<h4>各種SNS / リンク</h4>
@@ -514,8 +549,7 @@
 				</details>
 				<details class="accordion-main mb-4 min-w-full">
 					<summary class="font-bold">test</summary>
-					<ul class="pt-2 pl-2">
-					</ul>
+					<ul class="pt-2 pl-2"></ul>
 				</details>
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
@@ -575,7 +609,12 @@
 				class="footer-link"
 				style="margin-right: 10px; margin-left: 10px;">プライバシーポリシー</a
 			><span class="footer-span">|</span>
-			<a href="https://atserver186.jp/contact" class="footer-link" style="margin-left: 10px;" target="_blank">お問い合わせ</a>
+			<a
+				href="https://atserver186.jp/contact"
+				class="footer-link"
+				style="margin-left: 10px;"
+				target="_blank">お問い合わせ</a
+			>
 			<p class="footer-text">
 				&copy; 2026 ATSERVER Blog. | blog.atserver186.jp All Rights Reserved.
 				本サイトの無断転載は、固くこれを禁じます。
