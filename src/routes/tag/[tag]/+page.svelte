@@ -11,16 +11,11 @@
 	// data.posts を使う（+page.server.ts から渡される）
 	const posts = $derived(data.posts);
 
-    const tag = $derived(data.tag);
-
-    const getPageTitle = (tag: string): string => {
-        return `タグ:${tag}`;
-    };
-
-    let titleExport = getPageTitle(tag);
-
-
-	let pageTitle = titleExport;
+	const tag = $derived(data.tag);
+	const getPageTitle = (tag: string): string => {
+		return `タグ:${tag}`;
+	};
+	let pageTitle = $derived(getPageTitle(tag));
 </script>
 
 <svelte:head>
@@ -28,7 +23,7 @@
 	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
 </svelte:head>
 
-<p class="text-xl mb-4">
+<p class="mb-4 text-xl">
 	<i class="fa-solid fa-tag"></i>
 	{tag}
 </p>
