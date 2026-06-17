@@ -113,7 +113,7 @@
 	setupViewTransition();
 	/*e:View Transition*/
 
-	/*s:ローディングアニメーション*/
+	/*ローディングアニメーション*/
 	onMount(() => {
 		// localStorage をチェック
 		const alreadySeen = localStorage.getItem('hasSeenIntro');
@@ -128,10 +128,9 @@
 			//動画の長さに合わせて自動で消す（動画のendedイベントを使わない場合の保険）
 			setTimeout(() => {
 				isVisible.set(false);
-			}, 2000);
+			}, 5000);
 		}
 	});
-	/*e:ローディングアニメーション*/
 
 	onNavigate((navigation) => {
 		// ブラウザが View Transitions API に対応していない場合は何もしない
@@ -144,6 +143,12 @@
 			});
 		});
 	});
+
+		/*s:ローディングアニメーションをもう一度視聴する*/
+	function replayAnimation() {
+		isVisible.set(true);
+	}
+	/*e:ローディングアニメーションをもう一度視聴する*/
 </script>
 
 <svelte:head>
@@ -440,7 +445,7 @@
 						{#each data.tags as { name, count } (name)}
 							<a
 								href="/tag/{name}"
-								class="inline-flex items-center gap-1 text-xs rounded-full border p-1 transition hover:bg-gray-100 dark:hover:bg-gray-300"
+								class="inline-flex items-center gap-1 rounded-full border p-1 text-xs transition hover:bg-gray-100 dark:hover:bg-gray-300"
 							>
 								<i class="fa-solid fa-tag"></i>
 								<span class="font-semibold">{name}</span>
@@ -478,6 +483,9 @@
 					<h4>test</h4>
 					<ul>
 						<li><a href="/">test</a></li>
+						<li>
+							<button onclick={replayAnimation} class="text-white cursor-pointer">アニメーションをもう一度見る</button>
+						</li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
