@@ -4,7 +4,7 @@
 	const { posts = [] }: { posts?: Post[] } = $props();
 </script>
 
-<div class="post-list-grid-item mr-8">
+<div class="post-list-grid-item mr-0 md:mr-8">
 	{#each posts as post}
 		<a href={`/article/${post.category}/${post.slug}`}>
 			<article

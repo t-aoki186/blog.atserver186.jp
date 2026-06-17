@@ -396,7 +396,7 @@
 <main class="mt-15 mr-1 ml-1 min-h-screen">
 	<section class="container mx-auto mt-20 mb-25">
 		<div class="post-list-content">
-			<div class="mr-8 p-4">
+			<div class="main-content-area">
 				{@render children()}
 			</div>
 			<aside class="aside-content" style="border-left: 1px solid #000;">
