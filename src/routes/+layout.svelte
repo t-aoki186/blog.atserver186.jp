@@ -494,7 +494,7 @@
 							>
 						</li>
 						<li>
-							<a href="/category">
+							<a href="/">
 								<i class="fa-solid fa-house mr-1 text-xs"></i>
 								<span>ホーム</span>
 							</a>
@@ -609,7 +609,7 @@
 							>
 						</li>
 						<li>
-							<a href="/category">
+							<a href="/">
 								<i class="fa-solid fa-house mr-1 text-xs"></i>
 								<span>ホーム</span>
 							</a>
