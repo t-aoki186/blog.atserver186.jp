@@ -1,5 +1,5 @@
 /* アイコンのベーススタイル */
-.tf26-icon-material {
+.ats-custom-icon {
   display: inline-block;
   width: 1em;   /* 文字サイズに合わせる */
   height: 1em;
@@ -31,4 +31,10 @@
 .icon-x-mark-thin{
   -webkit-mask-image: url("https://cdn.atserver186.jp/img/tf26/material/x-mark-thin.svg");
   mask-image: url("https://cdn.atserver186.jp/img/tf26/material/x-mark-thin.svg");
+}
+
+/*=== ロゴ系 ==*/
+.icon-misskey-mi{
+  -webkit-mask-image: url("https://cdn.atserver186.jp/img/material/logo/misskey-mi-logo.svg");
+  mask-image: url("https://cdn.atserver186.jp/img/material/logo/misskey-mi-logo.svg");
 }

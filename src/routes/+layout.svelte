@@ -166,7 +166,7 @@
 	<link rel="canonical" href={$page.url.href} />
 	<meta property="og:url" content={$page.url.href} />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@t-aoki186" />
+	<meta name="twitter:site" content="@t_aoki186" />
 	<!--e:SEO-->
 </svelte:head>
 
@@ -357,7 +357,7 @@
 				</li>
 				<li>
 					<a href="/site/oss" class="header-text"
-						><i class="fa-solid fa-rectangle-list mr-1 text-xs"></i>使用しているOSS</a
+						><i class="fa-solid fa-rectangle-list mr-1 text-xs"></i>オープンソースライセンス</a
 					>
 				</li>
 				<li>
@@ -503,20 +503,20 @@
 						</li>
 						<li>
 							<a href="https://msk.atserver186.jp/t_aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<i class="ats-custom-icon icon-misskey-mi mr-1 text-xs"></i>
 								<span>あっとみすき(Misskey)</span>
 							</a>
 						</li>
 						<li>
 							<a href="https://github.com/t-aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<i class="fa-brands fa-github mr-1 text-xs"></i>
 								<span>Github</span>
 							</a>
 						</li>
 						<li>
 							<a href="https://gitlab.atserver186.jp/t-aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
-								<span>Gitlab</span>
+								<i class="fa-brands fa-gitlab mr-1 text-xs"></i>
+								<span>Gitlab(atserver)</span>
 							</a>
 						</li>
 						<li>
@@ -526,7 +526,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/link">
+							<a href="/site/links">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>すべてのリンクを確認する</span>
 							</a>
@@ -562,7 +562,7 @@
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
-						<li>
+												<li>
 							<a href="https://x.com/t_aoki186" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
@@ -570,20 +570,20 @@
 						</li>
 						<li>
 							<a href="https://msk.atserver186.jp/t_aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<i class="ats-custom-icon icon-misskey-mi mr-1 text-xs"></i>
 								<span>あっとみすき(Misskey)</span>
 							</a>
 						</li>
 						<li>
 							<a href="https://github.com/t-aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
+								<i class="fa-brands fa-github mr-1 text-xs"></i>
 								<span>Github</span>
 							</a>
 						</li>
 						<li>
 							<a href="https://gitlab.atserver186.jp/t-aoki186" target="_blank">
-								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
-								<span>Gitlab</span>
+								<i class="fa-brands fa-gitlab mr-1 text-xs"></i>
+								<span>Gitlab(atserver)</span>
 							</a>
 						</li>
 						<li>
@@ -593,7 +593,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/link">
+							<a href="/site/links">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>すべてのリンクを確認する</span>
 							</a>
