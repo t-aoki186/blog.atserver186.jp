@@ -144,7 +144,7 @@
 		});
 	});
 
-		/*s:ローディングアニメーションをもう一度視聴する*/
+	/*s:ローディングアニメーションをもう一度視聴する*/
 	function replayAnimation() {
 		isVisible.set(true);
 	}
@@ -351,8 +351,20 @@
 		>
 			<ul class="flex flex-col gap-4 text-sm tracking-wide">
 				<li>
-					<a href="/news" class="header-text"
-						><i class="fa-regular fa-file-lines mr-1 text-xs"></i>ニュース</a
+					<a href="/category" class="header-text">
+						<i class="fa-solid fa-folder mr-1 text-xs"></i>
+						<span>カテゴリ一覧</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tag" class="header-text">
+						<i class="fa-solid fa-tags mr-1 text-xs"></i>
+						<span>タグ一覧</span>
+					</a>
+				</li>
+				<li>
+					<a href="/site/sitemap" class="header-text"
+						><i class="fa-solid fa-sitemap mr-1 text-xs"></i>サイトマップ</a
 					>
 				</li>
 				<li>
@@ -361,15 +373,8 @@
 					>
 				</li>
 				<li>
-					<a
-						href="https://github.com/t-aoki186/blog.atserver186.jp"
-						class="header-text"
-						target="_blank"><i class="fa-brands fa-github mr-1 text-xs"></i>ソースコード</a
-					>
-				</li>
-				<li>
-					<a href="/site/sitemap" class="header-text"
-						><i class="fa-solid fa-sitemap mr-1 text-xs"></i>サイトマップ</a
+					<a href="/site/saucecode" class="header-text" target="_blank"
+						><i class="fa-solid fa-code mr-1 text-xs"></i>ソースコード</a
 					>
 				</li>
 				<li>
@@ -473,24 +478,69 @@
 				<div class="footer-flex-content">
 					<div class="footer-logo">
 						<a href="/">
-							<img src={logo} alt={logo_alt} class="h-auto w-45 rounded-xl" />
+							<img src={logo} alt={logo_alt} class="h-auto w-25 rounded-xl" />
 						</a>
 					</div>
 				</div>
 
 				<!-- フッターの右側コンテンツ -->
 				<div class="footer-flex-content">
-					<h4>test</h4>
+					<h4>メイン</h4>
 					<ul>
-						<li><a href="/">test</a></li>
 						<li>
-							<button onclick={replayAnimation} class="text-white cursor-pointer">アニメーションをもう一度見る</button>
+							<button onclick={replayAnimation} class="cursor-pointer text-white">
+								<i class="fa-solid fa-circle-play mr-1 text-xs"></i>
+								<span>アニメーションをもう一度見る</span></button
+							>
+						</li>
+						<li>
+							<a href="/category">
+								<i class="fa-solid fa-house mr-1 text-xs"></i>
+								<span>ホーム</span>
+							</a>
+						</li>
+						<li>
+							<a href="/category">
+								<i class="fa-solid fa-folder mr-1 text-xs"></i>
+								<span>カテゴリ一覧</span>
+							</a>
+						</li>
+						<li>
+							<a href="/tag">
+								<i class="fa-solid fa-tags mr-1 text-xs"></i>
+								<span>タグ一覧</span>
+							</a>
+						</li>
+						<li>
+							<a href="/search">
+								<i class="fa-solid fa-magnifying-glass mr-1 text-xs"></i>
+								<span>検索</span>
+							</a>
 						</li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
-					<h4>test</h4>
-					<ul></ul>
+					<h4>情報</h4>
+					<ul>
+						<li>
+							<a href="/site/composition">
+								<i class="fa-solid fa-circle-info mr-1 text-xs"></i>
+								<span>構成</span>
+							</a>
+						</li>
+						<li>
+							<a href="/site/licence">
+								<i class="fa-solid fa-gavel mr-1 text-xs"></i>
+								<span>オープンソースライセンス</span>
+							</a>
+						</li>
+						<li>
+							<a href="/site/saucecode">
+								<i class="fa-solid fa-code mr-1 text-xs"></i>
+								<span>ソースコード</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 				<div class="footer-flex-content">
 					<h4>各種SNS / リンク</h4>
@@ -550,19 +600,67 @@
 			<!--s:アコーディオン-->
 			<div class="mt-8">
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">test</summary>
+					<summary class="font-bold">メイン</summary>
 					<ul class="pt-2 pl-2">
-						<li><a href="/">test</a></li>
+						<li>
+							<button onclick={replayAnimation} class="cursor-pointer text-white">
+								<i class="fa-solid fa-circle-play mr-1 text-xs"></i>
+								<span>アニメーションをもう一度見る</span></button
+							>
+						</li>
+						<li>
+							<a href="/category">
+								<i class="fa-solid fa-house mr-1 text-xs"></i>
+								<span>ホーム</span>
+							</a>
+						</li>
+						<li>
+							<a href="/category">
+								<i class="fa-solid fa-folder mr-1 text-xs"></i>
+								<span>カテゴリ一覧</span>
+							</a>
+						</li>
+						<li>
+							<a href="/tag">
+								<i class="fa-solid fa-tags mr-1 text-xs"></i>
+								<span>タグ一覧</span>
+							</a>
+						</li>
+						<li>
+							<a href="/search">
+								<i class="fa-solid fa-magnifying-glass mr-1 text-xs"></i>
+								<span>検索</span>
+							</a>
+						</li>
 					</ul>
 				</details>
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">test</summary>
-					<ul class="pt-2 pl-2"></ul>
+					<summary class="font-bold">情報</summary>
+					<ul class="pt-2 pl-2">
+						<li>
+							<a href="/site/composition">
+								<i class="fa-solid fa-circle-info mr-1 text-xs"></i>
+								<span>構成</span>
+							</a>
+						</li>
+						<li>
+							<a href="/site/licence">
+								<i class="fa-solid fa-gavel mr-1 text-xs"></i>
+								<span>オープンソースライセンス</span>
+							</a>
+						</li>
+						<li>
+							<a href="/site/saucecode">
+								<i class="fa-solid fa-code mr-1 text-xs"></i>
+								<span>ソースコード</span>
+							</a>
+						</li>
+					</ul>
 				</details>
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
-												<li>
+						<li>
 							<a href="https://x.com/t_aoki186" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
