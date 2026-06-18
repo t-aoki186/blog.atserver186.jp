@@ -368,7 +368,7 @@
 					>
 				</li>
 				<li>
-					<a href="/site/oss" class="header-text"
+					<a href="/site/licence" class="header-text"
 						><i class="fa-solid fa-rectangle-list mr-1 text-xs"></i>オープンソースライセンス</a
 					>
 				</li>

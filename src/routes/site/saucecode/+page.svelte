@@ -14,9 +14,29 @@
 		<i class="fa-solid fa-code"></i>
 		{pageTitle}
 	</p>
-</div>
 
-<div class="mt-4">
-	<a href="https://github.com/t-aoki186/blog.atserver186.jp" target="_blank">
-        <i class="fa-brands fa-github mr-1"></i>Githab</a>
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<a
+			href="/category/"
+			class="block rounded-lg border p-4 transition hover:bg-gray-100 dark:hover:bg-gray-300"
+		>
+			<div class="flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<i class="fa-brands fa-github text-lg"></i>
+					<span class="font-semibold">Githubリポジトリ</span>
+				</div>
+			</div>
+		</a>
+		<a
+			href="/category/"
+			class="block rounded-lg border p-4 transition hover:bg-gray-100 dark:hover:bg-gray-300"
+		>
+			<div class="flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<i class="fa-brands fa-gitlab text-lg"></i>
+					<span class="font-semibold">Gitlabリポジトリ</span>
+				</div>
+			</div>
+		</a>
+	</div>
 </div>
