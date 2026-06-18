@@ -17,5 +17,7 @@
 </div>
 
 <div class="mt-4">
-	<p>準備中です。</p>
+	<div class="mb-4 rounded-2xl bg-gray-50 p-4">
+		<p>Connected to: {data.serverLocation}</p>
+	</div>
 </div>
