@@ -332,6 +332,13 @@ footer .container {
 	cursor: pointer;
 }
 
+.header-search-btn {
+	background-color: var(--main-bg-color);
+	padding: 2px 4px;
+	border-radius: 4px;
+	border: 1px solid var(--main-text-color);
+}
+
 /*footer*/
 .footer {
 	background-color: var(--main-text-color);
