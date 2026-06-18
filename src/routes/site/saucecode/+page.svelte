@@ -17,7 +17,7 @@
 
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 		<a
-			href="/category/"
+			href="https://github.com/t-aoki186/blog.atserver186.jp.git" target="_blank"
 			class="block rounded-lg border p-4 transition hover:bg-gray-100 dark:hover:bg-gray-300"
 		>
 			<div class="flex items-center justify-between">
@@ -28,7 +28,7 @@
 			</div>
 		</a>
 		<a
-			href="/category/"
+			href="https://gitlab.atserver186.jp/t-aoki186/blog.atserver186.jp.git" target="_blank"
 			class="block rounded-lg border p-4 transition hover:bg-gray-100 dark:hover:bg-gray-300"
 		>
 			<div class="flex items-center justify-between">
