@@ -60,7 +60,7 @@ nano /etc/apt/sources.list.d/ceph.sources
 
 ---
 
-### NTPサーバーを日本のものにし、制度を上げる
+### NTPサーバーを日本のものにし、精度を上げる
 まずchronyの設定ファイルを開きます。
 ```
 nano /etc/chrony/chrony.conf

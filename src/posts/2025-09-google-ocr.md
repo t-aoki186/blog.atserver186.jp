@@ -8,8 +8,7 @@ heading:
 thumbnail: https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp
 ---
 
-コード
-アプデ
+パッケージをアップデート
 
 ```
 sudo apt update
