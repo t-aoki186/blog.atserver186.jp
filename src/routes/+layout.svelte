@@ -149,6 +149,37 @@
 		isVisible.set(true);
 	}
 	/*e:ローディングアニメーションをもう一度視聴する*/
+
+	import { goto } from '$app/navigation';
+
+	// タブとパスのマッピング
+	const tabMap = {
+		home: '/',
+		search: '/search',
+		category: '/category',
+		tag: '/tag'
+	};
+
+	// 現在のパスからタブIDを取得
+	function getTabFromPath(path: string): string {
+		for (const [tab, route] of Object.entries(tabMap)) {
+			if (path === route) return tab;
+		}
+		return 'home'; // デフォルト
+	}
+
+	// 選択中のタブ（リアクティブに更新）
+	let selectedTab = $derived(getTabFromPath($page.url.pathname));
+
+	// タブ変更時のハンドラ（ユーザー操作のみ）
+	function handleTabChange(event: Event) {
+		const target = event.target as HTMLInputElement;
+		const tab = target.value;
+		const path = tabMap[tab];
+		if (path && $page.url.pathname !== path) {
+			goto(path);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -468,6 +499,55 @@
 	</section>
 </main>
 
+<!-- ===== 下部メニュー（モバイル用） ===== -->
+<div class="cc-ios-tabs bottom-nav md:hidden">
+	<!-- ラジオボタン（非表示） -->
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="home"
+		id="cc-tab-home"
+		class="hidden"
+		bind:group={selectedTab}
+		onchange={handleTabChange}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="search"
+		id="cc-tab-search"
+		class="hidden"
+		bind:group={selectedTab}
+		onchange={handleTabChange}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="category"
+		id="cc-tab-category"
+		class="hidden"
+		bind:group={selectedTab}
+		onchange={handleTabChange}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="tag"
+		id="cc-tab-tag"
+		class="hidden"
+		bind:group={selectedTab}
+		onchange={handleTabChange}
+	/>
+
+	<div class="cc-ios-tabs__control">
+		<div class="cc-ios-tabs__thumb"></div>
+		<label class="cc-ios-tabs__item" for="cc-tab-home">home</label>
+		<label class="cc-ios-tabs__item" for="cc-tab-search">search</label>
+		<label class="cc-ios-tabs__item" for="cc-tab-category">category</label>
+		<label class="cc-ios-tabs__item" for="cc-tab-tag">tag</label>
+	</div>
+</div>
+
 <!--フッター-->
 <footer class="footer m-0 w-full">
 	<div class="container">
@@ -729,3 +809,108 @@
 		<!--e:フッター最下部-->
 	</div>
 </footer>
+
+<style>
+	/* 元のスタイル（ほぼそのまま） */
+	.cc-ios-tabs {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		padding: 8px 16px; /* 上下を狭く */
+	}
+
+	.cc-ios-tabs__input {
+		display: none;
+	}
+
+	.cc-ios-tabs__control {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		align-items: center;
+		width: 100%; /* 幅を100%に */
+		max-width: 400px; /* 大きくなりすぎないように */
+		padding: 5px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.72);
+		box-shadow:
+			inset 0 0 0 1px rgba(15, 23, 42, 0.05),
+			0 2px 8px rgba(15, 23, 42, 0.08);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.cc-ios-tabs__thumb {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: calc(25% - 4px);
+		height: calc(100% - 10px);
+		border-radius: 999px;
+		background: #0b1220;
+		box-shadow:
+			0 1px 2px rgba(15, 23, 42, 0.2),
+			0 8px 20px rgba(15, 23, 42, 0.16);
+		transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: transform;
+	}
+
+	.cc-ios-tabs__item {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 36px;
+		border-radius: 999px;
+		color: #6b7280;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+		cursor: pointer;
+		user-select: none;
+		transition: color 260ms ease;
+	}
+
+	.cc-ios-tabs__item:hover {
+		color: #374151;
+	}
+
+	/* 選択状態によるthumbの移動 */
+	#cc-tab-home:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
+		transform: translateX(0%);
+	}
+	#cc-tab-search:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
+		transform: translateX(100%);
+	}
+	#cc-tab-category:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
+		transform: translateX(200%);
+	}
+	#cc-tab-tag:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
+		transform: translateX(300%);
+	}
+
+	/* 選択されたラベルの文字色 */
+	#cc-tab-home:checked ~ .cc-ios-tabs__control label[for='cc-tab-home'],
+	#cc-tab-search:checked ~ .cc-ios-tabs__control label[for='cc-tab-search'],
+	#cc-tab-category:checked ~ .cc-ios-tabs__control label[for='cc-tab-category'],
+	#cc-tab-tag:checked ~ .cc-ios-tabs__control label[for='cc-tab-tag'] {
+		color: #ffffff;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cc-ios-tabs__thumb,
+		.cc-ios-tabs__item {
+			transition: none;
+		}
+	}
+
+	/* ---- 下部固定用の追加スタイル ---- */
+	.bottom-nav {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 40;
+	}
+</style>
