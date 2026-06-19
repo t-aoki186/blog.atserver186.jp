@@ -152,49 +152,49 @@
 
 	import { goto } from '$app/navigation';
 
-	 // タブとパスのマッピング
-  const tabMap: Record<string, string> = {
-    home: '/',
-    search: '/search',
-    category: '/category',
-    tag: '/tag'
-  };
+	// タブとパスのマッピング
+	const tabMap: Record<string, string> = {
+		home: '/',
+		search: '/search',
+		category: '/category',
+		tag: '/tag'
+	};
 
-  // パスからタブIDを取得
-  function getTabFromPath(path: string): string {
-    for (const [tab, route] of Object.entries(tabMap)) {
-      if (path === route) return tab;
-    }
-    return 'home';
-  }
+	// パスからタブIDを取得
+	function getTabFromPath(path: string): string {
+		for (const [tab, route] of Object.entries(tabMap)) {
+			if (path === route) return tab;
+		}
+		return 'home';
+	}
 
-  // 選択中のタブ（ローカルステート）
-  let selectedTab = $state(getTabFromPath($page.url.pathname));
+	// 選択中のタブ（ローカルステート）
+	let selectedTab = $state(getTabFromPath($page.url.pathname));
 
-  // タブクリック時のハンドラ
-  function handleTabClick(tab: string, event: MouseEvent) {
-    event.preventDefault(); // デフォルト動作をキャンセル（ラジオボタンのチェックを手動で制御）
-    const path = tabMap[tab];
-    if (!path) return;
-    if ($page.url.pathname === path) return; // 同じページなら何もしない
+	// タブクリック時のハンドラ
+	function handleTabClick(tab: string, event: MouseEvent) {
+		event.preventDefault(); // デフォルト動作をキャンセル（ラジオボタンのチェックを手動で制御）
+		const path = tabMap[tab];
+		if (!path) return;
+		if ($page.url.pathname === path) return; // 同じページなら何もしない
 
-    // 即座にUIを更新（サムの移動）
-    selectedTab = tab;
+		// 即座にUIを更新（サムの移動）
+		selectedTab = tab;
 
-    // サムのトランジション完了後にページ遷移（カクつき防止）
-    setTimeout(() => {
-      goto(path);
-    }, 420);
-  }
+		// サムのトランジション完了後にページ遷移（カクつき防止）
+		setTimeout(() => {
+			goto(path);
+		}, 420);
+	}
 
-  // ページ遷移後にパスを監視し、タブを補正（ブラウザバックなど）
-  afterNavigate(() => {
-    const currentPath = $page.url.pathname;
-    const tab = getTabFromPath(currentPath);
-    if (tab !== selectedTab) {
-      selectedTab = tab;
-    }
-  });
+	// ページ遷移後にパスを監視し、タブを補正（ブラウザバックなど）
+	afterNavigate(() => {
+		const currentPath = $page.url.pathname;
+		const tab = getTabFromPath(currentPath);
+		if (tab !== selectedTab) {
+			selectedTab = tab;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -515,51 +515,51 @@
 </main>
 
 <div class="cc-ios-tabs bottom-nav md:hidden">
-  <!-- ラジオボタンは非表示だが、checked属性はselectedTabと連動 -->
-  <input
-    type="radio"
-    name="cc-ios-tabs"
-    value="home"
-    id="cc-tab-home"
-	class="hidden"
-    checked={selectedTab === 'home'}
-    onclick={(e) => handleTabClick('home', e)}
-  />
-  <input
-    type="radio"
-    name="cc-ios-tabs"
-    value="search"
-    id="cc-tab-search"
-	class="hidden"
-    checked={selectedTab === 'search'}
-    onclick={(e) => handleTabClick('search', e)}
-  />
-  <input
-    type="radio"
-    name="cc-ios-tabs"
-    value="category"
-    id="cc-tab-category"
-	class="hidden"
-    checked={selectedTab === 'category'}
-    onclick={(e) => handleTabClick('category', e)}
-  />
-  <input
-    type="radio"
-    name="cc-ios-tabs"
-    value="tag"
-    id="cc-tab-tag"
-	class="hidden"
-    checked={selectedTab === 'tag'}
-    onclick={(e) => handleTabClick('tag', e)}
-  />
+	<!-- ラジオボタンは非表示だが、checked属性はselectedTabと連動 -->
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="home"
+		id="cc-tab-home"
+		class="hidden"
+		checked={selectedTab === 'home'}
+		onclick={(e) => handleTabClick('home', e)}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="search"
+		id="cc-tab-search"
+		class="hidden"
+		checked={selectedTab === 'search'}
+		onclick={(e) => handleTabClick('search', e)}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="category"
+		id="cc-tab-category"
+		class="hidden"
+		checked={selectedTab === 'category'}
+		onclick={(e) => handleTabClick('category', e)}
+	/>
+	<input
+		type="radio"
+		name="cc-ios-tabs"
+		value="tag"
+		id="cc-tab-tag"
+		class="hidden"
+		checked={selectedTab === 'tag'}
+		onclick={(e) => handleTabClick('tag', e)}
+	/>
 
-  <div class="cc-ios-tabs__control">
-    <div class="cc-ios-tabs__thumb"></div>
-    <label class="cc-ios-tabs__item" for="cc-tab-home" onclick={(e) => handleTabClick('home', e)}>home</label>
-    <label class="cc-ios-tabs__item" for="cc-tab-search" onclick={(e) => handleTabClick('search', e)}>search</label>
-    <label class="cc-ios-tabs__item" for="cc-tab-category" onclick={(e) => handleTabClick('category', e)}>category</label>
-    <label class="cc-ios-tabs__item" for="cc-tab-tag" onclick={(e) => handleTabClick('tag', e)}>tag</label>
-  </div>
+	<div class="cc-ios-tabs__control">
+		<div class="cc-ios-tabs__thumb"></div>
+		<label class="cc-ios-tabs__item" for="cc-tab-home" onclick={(e) => handleTabClick('home', e)}><i class="fa-solid fa-house"></i></label>
+		<label class="cc-ios-tabs__item" for="cc-tab-search" onclick={(e) => handleTabClick('search', e)}><i class="fa-solid fa-magnifying-glass"></i></label>
+		<label class="cc-ios-tabs__item" for="cc-tab-category" onclick={(e) => handleTabClick('category', e)}><i class="fa-solid fa-folder"></i></label>
+		<label class="cc-ios-tabs__item" for="cc-tab-tag" onclick={(e) => handleTabClick('tag', e)}><i class="fa-solid fa-tags"></i></label>
+	</div>
 </div>
 
 <!--フッター-->
@@ -827,10 +827,16 @@
 <style>
 	/* 元のスタイル（ほぼそのまま） */
 	.cc-ios-tabs {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		padding: 8px 16px; /* 上下を狭く */
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		.cc-ios-tabs {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			padding: 8px 16px; /* 上下を狭く */
+		}
 	}
 
 	.cc-ios-tabs__input {
