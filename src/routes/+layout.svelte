@@ -152,34 +152,49 @@
 
 	import { goto } from '$app/navigation';
 
-	// タブとパスのマッピング
-	const tabMap = {
-		home: '/',
-		search: '/search',
-		category: '/category',
-		tag: '/tag'
-	};
+	 // タブとパスのマッピング
+  const tabMap: Record<string, string> = {
+    home: '/',
+    search: '/search',
+    category: '/category',
+    tag: '/tag'
+  };
 
-	// 現在のパスからタブIDを取得
-	function getTabFromPath(path: string): string {
-		for (const [tab, route] of Object.entries(tabMap)) {
-			if (path === route) return tab;
-		}
-		return 'home'; // デフォルト
-	}
+  // パスからタブIDを取得
+  function getTabFromPath(path: string): string {
+    for (const [tab, route] of Object.entries(tabMap)) {
+      if (path === route) return tab;
+    }
+    return 'home';
+  }
 
-	// 選択中のタブ（リアクティブに更新）
-	let selectedTab = $derived(getTabFromPath($page.url.pathname));
+  // 選択中のタブ（ローカルステート）
+  let selectedTab = $state(getTabFromPath($page.url.pathname));
 
-	// タブ変更時のハンドラ（ユーザー操作のみ）
-	function handleTabChange(event: Event) {
-		const target = event.target as HTMLInputElement;
-		const tab = target.value;
-		const path = tabMap[tab];
-		if (path && $page.url.pathname !== path) {
-			goto(path);
-		}
-	}
+  // タブクリック時のハンドラ
+  function handleTabClick(tab: string, event: MouseEvent) {
+    event.preventDefault(); // デフォルト動作をキャンセル（ラジオボタンのチェックを手動で制御）
+    const path = tabMap[tab];
+    if (!path) return;
+    if ($page.url.pathname === path) return; // 同じページなら何もしない
+
+    // 即座にUIを更新（サムの移動）
+    selectedTab = tab;
+
+    // サムのトランジション完了後にページ遷移（カクつき防止）
+    setTimeout(() => {
+      goto(path);
+    }, 420);
+  }
+
+  // ページ遷移後にパスを監視し、タブを補正（ブラウザバックなど）
+  afterNavigate(() => {
+    const currentPath = $page.url.pathname;
+    const tab = getTabFromPath(currentPath);
+    if (tab !== selectedTab) {
+      selectedTab = tab;
+    }
+  });
 </script>
 
 <svelte:head>
@@ -499,53 +514,52 @@
 	</section>
 </main>
 
-<!-- ===== 下部メニュー（モバイル用） ===== -->
 <div class="cc-ios-tabs bottom-nav md:hidden">
-	<!-- ラジオボタン（非表示） -->
-	<input
-		type="radio"
-		name="cc-ios-tabs"
-		value="home"
-		id="cc-tab-home"
-		class="hidden"
-		bind:group={selectedTab}
-		onchange={handleTabChange}
-	/>
-	<input
-		type="radio"
-		name="cc-ios-tabs"
-		value="search"
-		id="cc-tab-search"
-		class="hidden"
-		bind:group={selectedTab}
-		onchange={handleTabChange}
-	/>
-	<input
-		type="radio"
-		name="cc-ios-tabs"
-		value="category"
-		id="cc-tab-category"
-		class="hidden"
-		bind:group={selectedTab}
-		onchange={handleTabChange}
-	/>
-	<input
-		type="radio"
-		name="cc-ios-tabs"
-		value="tag"
-		id="cc-tab-tag"
-		class="hidden"
-		bind:group={selectedTab}
-		onchange={handleTabChange}
-	/>
+  <!-- ラジオボタンは非表示だが、checked属性はselectedTabと連動 -->
+  <input
+    type="radio"
+    name="cc-ios-tabs"
+    value="home"
+    id="cc-tab-home"
+	class="hidden"
+    checked={selectedTab === 'home'}
+    onclick={(e) => handleTabClick('home', e)}
+  />
+  <input
+    type="radio"
+    name="cc-ios-tabs"
+    value="search"
+    id="cc-tab-search"
+	class="hidden"
+    checked={selectedTab === 'search'}
+    onclick={(e) => handleTabClick('search', e)}
+  />
+  <input
+    type="radio"
+    name="cc-ios-tabs"
+    value="category"
+    id="cc-tab-category"
+	class="hidden"
+    checked={selectedTab === 'category'}
+    onclick={(e) => handleTabClick('category', e)}
+  />
+  <input
+    type="radio"
+    name="cc-ios-tabs"
+    value="tag"
+    id="cc-tab-tag"
+	class="hidden"
+    checked={selectedTab === 'tag'}
+    onclick={(e) => handleTabClick('tag', e)}
+  />
 
-	<div class="cc-ios-tabs__control">
-		<div class="cc-ios-tabs__thumb"></div>
-		<label class="cc-ios-tabs__item" for="cc-tab-home">home</label>
-		<label class="cc-ios-tabs__item" for="cc-tab-search">search</label>
-		<label class="cc-ios-tabs__item" for="cc-tab-category">category</label>
-		<label class="cc-ios-tabs__item" for="cc-tab-tag">tag</label>
-	</div>
+  <div class="cc-ios-tabs__control">
+    <div class="cc-ios-tabs__thumb"></div>
+    <label class="cc-ios-tabs__item" for="cc-tab-home" onclick={(e) => handleTabClick('home', e)}>home</label>
+    <label class="cc-ios-tabs__item" for="cc-tab-search" onclick={(e) => handleTabClick('search', e)}>search</label>
+    <label class="cc-ios-tabs__item" for="cc-tab-category" onclick={(e) => handleTabClick('category', e)}>category</label>
+    <label class="cc-ios-tabs__item" for="cc-tab-tag" onclick={(e) => handleTabClick('tag', e)}>tag</label>
+  </div>
 </div>
 
 <!--フッター-->
