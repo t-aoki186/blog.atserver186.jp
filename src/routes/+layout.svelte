@@ -378,7 +378,7 @@
 					>
 				</li>
 				<li>
-					<a href="/site/links" class="header-text"
+					<a href="/site/links" class="header-text" target="_blank"
 						><i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>各種SNS / リンク</a
 					>
 				</li>
@@ -576,7 +576,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/site/links">
+							<a href="/site/links" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>すべてのリンクを確認する</span>
 							</a>
@@ -691,7 +691,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/site/links">
+							<a href="/site/links" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>すべてのリンクを確認する</span>
 							</a>
