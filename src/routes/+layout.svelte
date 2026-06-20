@@ -200,9 +200,9 @@
 	const thumbTransform = $derived.by(() => {
 		const positions: Record<string, string> = {
 			home: 'translateX(0%)',
-			search: 'translateX(100%)',
-			category: 'translateX(200%)',
-			tag: 'translateX(300%)'
+			search: 'translateX(102%)',
+			category: 'translateX(204%)',
+			tag: 'translateX(306%)'
 		};
 		return positions[selectedTab] || 'translateX(0%)';
 	});
@@ -938,9 +938,6 @@
 	.cc-ios-tabs__item.active {
 		color: #ffffff;
 	}
-
-	/* 選択状態によるthumbの移動 */
-	/* CSSは削除し、JavaScriptで制御されるようになりました */
 
 	@media (prefers-reduced-motion: reduce) {
 		.cc-ios-tabs__thumb,
