@@ -195,6 +195,17 @@
 			selectedTab = tab;
 		}
 	});
+
+	// サムの移動量を計算
+	const thumbTransform = $derived.by(() => {
+		const positions: Record<string, string> = {
+			home: 'translateX(0%)',
+			search: 'translateX(100%)',
+			category: 'translateX(200%)',
+			tag: 'translateX(300%)'
+		};
+		return positions[selectedTab] || 'translateX(0%)';
+	});
 </script>
 
 <svelte:head>
@@ -554,11 +565,39 @@
 	/>
 
 	<div class="cc-ios-tabs__control">
-		<div class="cc-ios-tabs__thumb"></div>
-		<label class="cc-ios-tabs__item" for="cc-tab-home" onclick={(e) => handleTabClick('home', e)}><i class="fa-solid fa-house"></i></label>
-		<label class="cc-ios-tabs__item" for="cc-tab-search" onclick={(e) => handleTabClick('search', e)}><i class="fa-solid fa-magnifying-glass"></i></label>
-		<label class="cc-ios-tabs__item" for="cc-tab-category" onclick={(e) => handleTabClick('category', e)}><i class="fa-solid fa-folder"></i></label>
-		<label class="cc-ios-tabs__item" for="cc-tab-tag" onclick={(e) => handleTabClick('tag', e)}><i class="fa-solid fa-tags"></i></label>
+		<div class="cc-ios-tabs__thumb" style="transform: {thumbTransform};"></div>
+		<button
+			class="cc-ios-tabs__item"
+			class:active={selectedTab === 'home'}
+			onclick={(e) => handleTabClick('home', e)}
+			aria-label="ホーム"
+		>
+			<i class="fa-solid fa-house"></i>
+		</button>
+		<button
+			class="cc-ios-tabs__item"
+			class:active={selectedTab === 'search'}
+			onclick={(e) => handleTabClick('search', e)}
+			aria-label="検索"
+		>
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</button>
+		<button
+			class="cc-ios-tabs__item"
+			class:active={selectedTab === 'category'}
+			onclick={(e) => handleTabClick('category', e)}
+			aria-label="カテゴリ"
+		>
+			<i class="fa-solid fa-folder"></i>
+		</button>
+		<button
+			class="cc-ios-tabs__item"
+			class:active={selectedTab === 'tag'}
+			onclick={(e) => handleTabClick('tag', e)}
+			aria-label="タグ"
+		>
+			<i class="fa-solid fa-tags"></i>
+		</button>
 	</div>
 </div>
 
@@ -896,27 +935,12 @@
 		color: #374151;
 	}
 
-	/* 選択状態によるthumbの移動 */
-	#cc-tab-home:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
-		transform: translateX(0%);
-	}
-	#cc-tab-search:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
-		transform: translateX(100%);
-	}
-	#cc-tab-category:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
-		transform: translateX(200%);
-	}
-	#cc-tab-tag:checked ~ .cc-ios-tabs__control .cc-ios-tabs__thumb {
-		transform: translateX(300%);
-	}
-
-	/* 選択されたラベルの文字色 */
-	#cc-tab-home:checked ~ .cc-ios-tabs__control label[for='cc-tab-home'],
-	#cc-tab-search:checked ~ .cc-ios-tabs__control label[for='cc-tab-search'],
-	#cc-tab-category:checked ~ .cc-ios-tabs__control label[for='cc-tab-category'],
-	#cc-tab-tag:checked ~ .cc-ios-tabs__control label[for='cc-tab-tag'] {
+	.cc-ios-tabs__item.active {
 		color: #ffffff;
 	}
+
+	/* 選択状態によるthumbの移動 */
+	/* CSSは削除し、JavaScriptで制御されるようになりました */
 
 	@media (prefers-reduced-motion: reduce) {
 		.cc-ios-tabs__thumb,
