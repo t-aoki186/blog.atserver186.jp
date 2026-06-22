@@ -18,6 +18,10 @@
 	const tableOfContents = $derived(data.tableOfContents);
 
 	let pageTitle = $derived(post.title);
+
+	function sanitizeTransitionName(str: string): string {
+		return str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '');
+	}
 </script>
 
 <svelte:head>
@@ -47,7 +51,7 @@
 		src={post.thumbnail}
 		alt="{post.title}のサムネイル"
 		class="mx-auto rounded-xl"
-		style="view-transition-name: {post.slug}-hero;"
+		style="view-transition-name: {sanitizeTransitionName(post.title)}-hero;"
 	/>
 	<p class=""><i class="fa-solid fa-clock-rotate-left"></i>{post.date}</p>
 
