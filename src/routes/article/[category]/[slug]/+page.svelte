@@ -9,7 +9,11 @@
 	}
 
 	// 型定義（htmlプロパティを追加）
-	let { data }: { data: { post: Post & { html: string }; site_title: string; tableOfContents: TableOfContents[] } } = $props();
+	let {
+		data
+	}: {
+		data: { post: Post & { html: string }; site_title: string; tableOfContents: TableOfContents[] };
+	} = $props();
 	const post = $derived(data.post);
 	const tableOfContents = $derived(data.tableOfContents);
 
@@ -39,11 +43,16 @@
 			{Array.isArray(post.tags) ? post.tags.join(', ') : post.tags}
 		</p>
 	</div>
-	<img src={post.thumbnail} alt="{post.title}のサムネイル" class="mx-auto rounded-xl" />
+	<img
+		src={post.thumbnail}
+		alt="{post.title}のサムネイル"
+		class="mx-auto rounded-xl"
+		style="view-transition-name: {post.slug}-hero;"
+	/>
 	<p class=""><i class="fa-solid fa-clock-rotate-left"></i>{post.date}</p>
 
 	{#if tableOfContents && tableOfContents.length > 0}
-		<nav class="table-of-contents mb-6 rounded-xl mt-2 bg-gray-100 p-4">
+		<nav class="table-of-contents mt-2 mb-6 rounded-xl bg-gray-100 p-4">
 			<h2 class="mb-3 text-lg font-bold"><i class="fa-solid fa-list-ul mr-1"></i>目次</h2>
 			<ul class="space-y-1">
 				{#each tableOfContents as item}
@@ -76,8 +85,6 @@
 </ol>
 
 <style>
-
-
 	/* マークダウンのスタイル */
 	.markdown-content :global(h1) {
 		font-size: 1.8rem;

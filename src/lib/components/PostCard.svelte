@@ -14,6 +14,7 @@
 					src={post.thumbnail}
 					alt="{post.title}のサムネイル"
 					class="h-24 w-30 shrink-0 rounded-lg object-cover"
+					style="view-transition-name: {post.slug}-hero;"
 				/>
 				<div class="flex-1">
 					<h2 class="text-bace mb-2 md:text-2xl">{post.title}</h2>
