@@ -858,6 +858,7 @@
 				&copy; 2026 ATSERVER Blog. | blog.atserver186.jp All Rights Reserved.
 				本サイトの無断転載は、固くこれを禁じます。
 			</p>
+			<div class="mb-16 md:mb-0"><p class="hidden">hidden-marigin-bottom</p></div>
 		</div>
 		<!--e:フッター最下部-->
 	</div>
