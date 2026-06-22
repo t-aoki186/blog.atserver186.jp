@@ -1,9 +1,17 @@
 <script lang="ts">
 	import type { Post } from '$lib/types';
 
+	interface TableOfContents {
+		title: string;
+		id: string;
+		level: number;
+		children?: TableOfContents[];
+	}
+
 	// 型定義（htmlプロパティを追加）
-	let { data }: { data: { post: Post & { html: string }; site_title: string } } = $props();
+	let { data }: { data: { post: Post & { html: string }; site_title: string; tableOfContents: TableOfContents[] } } = $props();
 	const post = $derived(data.post);
+	const tableOfContents = $derived(data.tableOfContents);
 
 	let pageTitle = $derived(post.title);
 </script>
@@ -33,6 +41,29 @@
 	</div>
 	<img src={post.thumbnail} alt="{post.title}のサムネイル" class="mx-auto rounded-xl" />
 	<p class=""><i class="fa-solid fa-clock-rotate-left"></i>{post.date}</p>
+
+	{#if tableOfContents && tableOfContents.length > 0}
+		<nav class="table-of-contents mb-6 rounded-xl mt-2 bg-gray-100 p-4">
+			<h2 class="mb-3 text-lg font-bold"><i class="fa-solid fa-list-ul mr-1"></i>目次</h2>
+			<ul class="space-y-1">
+				{#each tableOfContents as item}
+					<li class="ml-0">
+						<a href="#{item.id}" class="text-black hover:underline">{item.title}</a>
+						{#if item.children && item.children.length > 0}
+							<ul class="ml-4 space-y-1">
+								{#each item.children as child}
+									<li>
+										<a href="#{child.id}" class="text-black hover:underline">{child.title}</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	{/if}
+
 	<div class="markdown-content">
 		{@html post.html}
 	</div>
@@ -45,6 +76,8 @@
 </ol>
 
 <style>
+
+
 	/* マークダウンのスタイル */
 	.markdown-content :global(h1) {
 		font-size: 1.8rem;
