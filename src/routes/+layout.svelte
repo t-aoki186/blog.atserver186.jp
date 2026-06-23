@@ -564,10 +564,10 @@
 		onclick={(e) => handleTabClick('tag', e)}
 	/>
 
-	<div class="cc-ios-tabs__control">
-		<div class="cc-ios-tabs__thumb" style="transform: {thumbTransform};"></div>
+	<div class="sp-bottom-bar_control bg-white/80 backdrop-blur-md">
+		<div class="sp-bottom-bar_thumb" style="transform: {thumbTransform};"></div>
 		<button
-			class="cc-ios-tabs__item"
+			class="sp-bottom-bar_item"
 			class:active={selectedTab === 'home'}
 			onclick={(e) => handleTabClick('home', e)}
 			aria-label="ホーム"
@@ -575,7 +575,7 @@
 			<i class="fa-solid fa-house"></i>
 		</button>
 		<button
-			class="cc-ios-tabs__item"
+			class="sp-bottom-bar_item"
 			class:active={selectedTab === 'search'}
 			onclick={(e) => handleTabClick('search', e)}
 			aria-label="検索"
@@ -583,7 +583,7 @@
 			<i class="fa-solid fa-magnifying-glass"></i>
 		</button>
 		<button
-			class="cc-ios-tabs__item"
+			class="sp-bottom-bar_item"
 			class:active={selectedTab === 'category'}
 			onclick={(e) => handleTabClick('category', e)}
 			aria-label="カテゴリ"
@@ -591,7 +591,7 @@
 			<i class="fa-solid fa-folder"></i>
 		</button>
 		<button
-			class="cc-ios-tabs__item"
+			class="sp-bottom-bar_item"
 			class:active={selectedTab === 'tag'}
 			onclick={(e) => handleTabClick('tag', e)}
 			aria-label="タグ"
@@ -879,28 +879,24 @@
 		}
 	}
 
-	.cc-ios-tabs__input {
+	.sp-bottom-bar_input {
 		display: none;
 	}
 
-	.cc-ios-tabs__control {
+	.sp-bottom-bar_control {
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		align-items: center;
-		width: 100%; /* 幅を100%に */
-		max-width: 400px; /* 大きくなりすぎないように */
+		width: 100%;
+		max-width: 400px;
 		padding: 5px;
 		border-radius: 999px;
-		background: rgba(255, 255, 255, 0.72);
-		box-shadow:
-			inset 0 0 0 1px rgba(15, 23, 42, 0.05),
-			0 2px 8px rgba(15, 23, 42, 0.08);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 	}
 
-	.cc-ios-tabs__thumb {
+	.sp-bottom-bar_thumb {
 		position: absolute;
 		top: 5px;
 		left: 5px;
@@ -915,7 +911,7 @@
 		will-change: transform;
 	}
 
-	.cc-ios-tabs__item {
+	.sp-bottom-bar_item {
 		position: relative;
 		z-index: 1;
 		display: flex;
@@ -932,17 +928,17 @@
 		transition: color 260ms ease;
 	}
 
-	.cc-ios-tabs__item:hover {
+	.sp-bottom-bar_item:hover {
 		color: #374151;
 	}
 
-	.cc-ios-tabs__item.active {
+	.sp-bottom-bar_item.active {
 		color: #ffffff;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.cc-ios-tabs__thumb,
-		.cc-ios-tabs__item {
+		.sp-bottom-bar_thumb,
+		.sp-bottom-bar_item {
 			transition: none;
 		}
 	}

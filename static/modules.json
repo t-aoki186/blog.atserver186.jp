@@ -1,18 +1,6 @@
 {
   "modules": [
     {
-      "name": "node_modules/@emnapi/core",
-      "version": "1.11.0",
-      "license": "MIT",
-      "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-1.11.0.tgz"
-    },
-    {
-      "name": "node_modules/@emnapi/runtime",
-      "version": "1.11.0",
-      "license": "MIT",
-      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.0.tgz"
-    },
-    {
       "name": "node_modules/@emnapi/wasi-threads",
       "version": "1.2.2",
       "license": "MIT",
@@ -1711,5 +1699,5 @@
       "resolved": "https://registry.npmjs.org/zimmerframe/-/zimmerframe-1.1.4.tgz"
     }
   ],
-  "generatedAt": "2026-06-18T07:29:07.501Z"
+  "generatedAt": "2026-06-23T07:30:56.087Z"
 }
