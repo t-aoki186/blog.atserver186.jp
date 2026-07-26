@@ -26,15 +26,17 @@
 		{pageTitle}
 	</p>
 
-	<form method="get" action="/search/" class="mb-4 flex gap-2">
-		<input
-			type="text"
-			name="q"
-			value={q}
-			placeholder="検索ワードを入力"
-			class="rounded border px-3 py-1 w-full"
-		/>
-		<button type="submit" class="rounded bg-gray-800 px-4 py-1 text-white">検索</button>
+	<form action="/search/" class="flex w-full items-center overflow-hidden py-4" method="GET">
+		<label class="flex-1">
+			<input
+				type="text"
+				name="q"
+				class="sf-input h-11.25 w-full border-none"
+				placeholder="キーワードを入力"
+			/>
+		</label>
+		<button type="submit" class="sf-submit h-11.25 w-12.5 cursor-pointer" aria-label="検索"
+		></button>
 	</form>
 
 	{#if q}
@@ -48,5 +50,4 @@
 	{:else}
 		<p>検索ワードを指定してください</p>
 	{/if}
-
 </div>

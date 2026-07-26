@@ -229,43 +229,18 @@
 
 <Modal bind:showModal>
 	{#if modalType === 'search'}
-		<form class="s-search-form mb-4" action="/organizations/" method="GET">
-			<input
-				class="s-search-input"
-				type="text"
-				id="searchTerm"
-				name="search"
-				placeholder="検索..."
-			/>
-			<button class="m-search-button" type="submit" title="検索する"
-				><i class="fas fa-search"></i></button
-			>
+		<form action="/search/" class="flex w-full items-center overflow-hidden py-4" method="GET">
+			<label class="flex-1">
+				<input
+					type="text"
+					name="q"
+					class="sf-input h-11.25 w-full border-none"
+					placeholder="キーワードを入力"
+				/>
+			</label>
+			<button type="submit" class="sf-submit h-11.25 w-12.5 cursor-pointer" aria-label="検索"
+			></button>
 		</form>
-		<div class="relative m-auto mt-10 mb-4 max-w-125 bg-white">
-			<!-- 左下の角 -->
-			<span
-				class="absolute bottom-0 left-0 h-4 w-4 border-b-2 border-l-2 border-(--main-text-color)"
-			></span>
-			<!-- 右下の角 -->
-			<span
-				class="absolute right-0 bottom-0 h-4 w-4 border-r-2 border-b-2 border-(--main-text-color)"
-			></span>
-			<!-- コンテンツ -->
-			<div class="flex justify-center gap-4 font-bold text-(--main-text-color)">
-				<div class="tp-search-method">
-					<a href="/organizations" class="dash-link">
-						<i class="fa-solid fa-list"></i>
-						<p>絞り込む</p>
-					</a>
-				</div>
-				<div class="tp-search-method">
-					<a href="/timetable" class="dash-link">
-						<i class="fa-solid fa-list"></i>
-						<p>タイムテーブルから<br />探す</p>
-					</a>
-				</div>
-			</div>
-		</div>
 	{/if}
 </Modal>
 
@@ -285,7 +260,7 @@
 		<div class="flex items-center md:hidden">
 			<!--s:スマホ用検索ボタン-->
 			<button
-				onclick={() => openModal('a')}
+				onclick={() => openModal('search')}
 				type="button"
 				title="検索する"
 				class="mr-4 cursor-pointer text-sm"><i class="fa-solid fa-magnifying-glass"></i></button
@@ -337,7 +312,7 @@
 			<ul class="flex items-center gap-5 whitespace-nowrap transition">
 				<li>
 					<button
-						onclick={() => openModal('a')}
+						onclick={() => openModal('search')}
 						type="button"
 						class="header-text header-search-btn ml-3 text-xs tracking-wider transition"
 						><i class="fa-solid fa-magnifying-glass mr-1"></i><kbd>Ctrl&nbsp;K</kbd></button
@@ -471,6 +446,7 @@
 						<label class="flex-1">
 							<input
 								type="text"
+								name="q"
 								class="sf-input h-11.25 w-full border-none"
 								placeholder="キーワードを入力"
 							/>
