@@ -14,7 +14,7 @@
 			closing = true;
 			setTimeout(() => {
 				visible = false;
-			}, 200); //アニメーション時間と合わせる
+			}, 200); //cssで指定しているフェード時間と合わせる
 		}
 	});
 

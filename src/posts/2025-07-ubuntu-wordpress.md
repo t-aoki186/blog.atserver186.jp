@@ -29,9 +29,9 @@ thumbnail: https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp
 sudo su
 ```
 
-<img src="https://atserver186.jp/Service/Blog/img/686b82d64d33a.png" alt="username@servername:$~>_">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686b82d64d33a.png" alt="username@servername:$~>_">
 から
-<img src="https://atserver186.jp/Service/Blog/img/686b8301572a0.png" alt="root@servername:/home/username#_">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686b8301572a0.png" alt="root@servername:/home/username#_">
 になる
 
 - Apache2
@@ -48,7 +48,7 @@ systemctl status apache2.service
 
 と入力し、以下のように表示されていればきちんとインストールされています。
 
-<img src="https://atserver186.jp/Service/Blog/img/686b7ea071803.png" alt="Active : active(running)">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686b7ea071803.png" alt="Active : active(running)">
 
 - PHP , MySql
 
@@ -63,7 +63,7 @@ php -v
 ```
 
 と入力し、以下のように表示されていればきちんとインストールされています。
-<img src="https://atserver186.jp/Service/Blog/img/686b83ed2c7ef.png" alt="">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686b83ed2c7ef.png" alt="">
 
 - MariaDB
 
@@ -114,7 +114,7 @@ cloudflared --version
 ```
 
 と入力し、以下のように表示されていればきちんとインストールされています。
-<img src="https://atserver186.jp/Service/Blog/img/686b8753be496.png" alt="">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686b8753be496.png" alt="">
 
 次にTunnelの設定をしましょう。
 
@@ -122,11 +122,11 @@ cloudflared --version
   そうすると、「Zero Trustを起動する」というボタンが現れるのでクリックしCloudflareに登録したアカウントを選択します。
 - https://one.dash.cloudflare.com/(人による)/home/quick-start が開くのでサイドバーの「ネットワーク」をクリックし、展開されたTunnelsをクリックします。
 - 「トンネルを作成する」をクリックします。
-  <img src="https://atserver186.jp/Service/Blog/img/686d13665d09a.png" alt="">
+  <img src="https://pic.atserver186.jp/public/blog/article/old-img/686d13665d09a.png" alt="">
 - 「Cloudflare」をクリックし任意の文字列でトンネルを作成します。
   そうしたら作成したトンネルをクリックし、「編集」をクリックします。
 - 「環境を選択」でDebianを選択
-- <img src="https://atserver186.jp/Service/Blog/img/686d144d458c1.png">
+- <img src="https://pic.atserver186.jp/public/blog/article/old-img/686d144d458c1.png">
   画像の赤線で囲まれた部分をコピーしUbuntu Serverに貼り付けます。
   そうすればOS起動時に自動でトンネルが起動されTunnel Errorにキレずに済みます。
   最後にUbuntu server側でCloudflareにログインしましょう。
@@ -195,12 +195,12 @@ chown -R www-data:www-data .
 
 ではブラウザで 「サーバーのip/wordpress」を開き初期設定をしていきましょう。（例:192.168.11.39/wordpress）
 以下の画像たちに従って設定してください。1.「さぁ、始めましょう！」をクリック
-<img src="https://atserver186.jp/Service/Blog/img/686e4fcd921fa.png"> 2.先ほど設定したDBの名前、ユーザー名、パスワードを入力して「送信」をクリックしましょう。
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686e4fcd921fa.png"> 2.先ほど設定したDBの名前、ユーザー名、パスワードを入力して「送信」をクリックしましょう。
 この時、WordPressをインストールしたサーバーにDBを立てた場合は「データベースのホスト名」を変更する必要はありません。
 また、「テーブルの接頭辞」も変更する必要はありません。
-<img src="https://atserver186.jp/Service/Blog/img/686e4fd6676e6.png"> 3.「インストールを実行」をクリック
-<img src="https://atserver186.jp/Service/Blog/img/686e4fdf77434.png"> 4.「ようこそ」画面が表示されるので入力します。5.左下の「WordPressをインストール」をクリック
-<img src="https://atserver186.jp/Service/Blog/img/686e4fea84b47.png"> 6.「ログイン」をクリックし、先ほど設定したID、PWでログインする。
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686e4fd6676e6.png"> 3.「インストールを実行」をクリック
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686e4fdf77434.png"> 4.「ようこそ」画面が表示されるので入力します。5.左下の「WordPressをインストール」をクリック
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686e4fea84b47.png"> 6.「ログイン」をクリックし、先ほど設定したID、PWでログインする。
 
 # 公開前の修正
 
@@ -322,7 +322,7 @@ systemctl restart apache2.service
 まずhttp://サーバーのip/wp-adminから管理画面にアクセスし、
 サイドバーの設定をクリック
 
-<img src="https://atserver186.jp/Service/Blog/img/686e6063bd2a2.png">
+<img src="https://pic.atserver186.jp/public/blog/article/old-img/686e6063bd2a2.png">
 一般設定が開くので
 「WordPress アドレス (URL)」と「サイトアドレス (URL)」に先ほど設定したサブドメイン.ドメインを入力します。
 次に管理画面を強制 HTTPS 化します。
