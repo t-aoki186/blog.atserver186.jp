@@ -22,6 +22,14 @@
 	function sanitizeTransitionName(str: string): string {
 		return str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '');
 	}
+
+	const inputdate = new Date(post.date);
+
+	const formattedDate = new Intl.DateTimeFormat('ja-JP', {
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit'
+	}).format(inputdate);
 </script>
 
 <svelte:head>
@@ -53,7 +61,7 @@
 		class="mx-auto rounded-xl"
 		style="view-transition-name: {sanitizeTransitionName(post.title)}-hero;"
 	/>
-	<p class=""><i class="fa-solid fa-clock-rotate-left"></i>{post.date}</p>
+	<p class=""><i class="fa-regular fa-clock"></i>{formattedDate}{#if post.edited === 1}<span class="ml-2 w-fit rounded-2xl border border-gray-500 px-1 text-xs"><i class="fa-solid fa-clock-rotate-left mr-1"></i>編集済</span>{/if}</p>
 
 	{#if tableOfContents && tableOfContents.length > 0}
 		<nav class="table-of-contents mt-2 mb-6 rounded-xl bg-gray-100 p-4">

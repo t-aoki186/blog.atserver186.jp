@@ -4,6 +4,7 @@ export interface FrontMatter {
   date: string;
   category: string;
   tags: string | string[];
+  edited: number;
   heading: string;
   thumbnail?: string;
 }
